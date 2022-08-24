@@ -32,24 +32,15 @@
     \question{Given that 1 minute of latitude is approximately equal to 1 nautical mile (1852 meters), determine the following:}
     \begin{parts}
         \part{How many significant digits after the decimal must be included for a latitude represented in decimal degree to describe a position that is accurate to 1 cm?}
-        \solution{
-        According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees}, 7 significant digits are required to have an accuracy of 1.11 centimeters. We can layout conversion factors to confirm this.
-        \begin{equation}
-            \begin{split}
-                \frac{1'\;[lat]}{1\;[nm]} & = \frac{1'\;[lat]}{1852\;[m]}\\
-            \end{split}
-        \end{equation}
-        \begin{equation}
-            \begin{split}
-                1852\;[m]\frac{100 [cm]}{1 [m]} & = 185,200\; [cm]\\
-                \frac{1'\;[lat]}{185,200\; [cm]} & = 5.399568 \times 10^{-6}\\
-            \end{split}
-        \end{equation}
-        Because $5.39956803 \times 10^{-6}$ minutes of latitude is necessary for a $1\;[cm]$ of distance
-        }
 
+        \solution{According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.}
 
         \part{How many significant digits are required after the decimal in the arc-seconds field is represented in degrees, arc-minutes, and arc-seconds to describe the same accuracy (1 cm)?}
+
+        \solution{
+        Becuase $1\times10^{-7}$ minutes of latitude are required for $1\;[cm]$ of distance and $1$ minute is $1$ arc-minute, we can say that at least 7 significant digits are required for $1\;[cm]$ of accuracy.
+
+        Because $1\times10^{-7}$ minutes of latitude are required for $1\;[cm]$ of distance and $60$ arc-seconds are in $1$ arc-minute, we can say that 6 significant digits of precision are needed when the longitude is given in arc-seconds.}
     \end{parts}
     Note: $1 \:\text{[deg]} = 60\: \text{[arc-minutes]}$ and $1\: \text{[arc-minute]} = 60\: \text{[arc-seconds]}$
     \clearpage
