@@ -31,8 +31,9 @@
 \begin{questions}
     \question{Given that 1 minute of latitude is approximately equal to 1 nautical mile (1852 meters), determine the following:}
     \begin{parts}
-        \part{How many significant digits after the decimal must be included for a latitude represented in decimal degree to describe a position that is accurate to 1 cm?}
-
+        \part{How many significant digits after the decimal must be included for a
+            latitude represented in decimal degree to describe a position that is accurate
+            to 1 cm?}\\
         \solution{According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.
 
         We can do some unit conversion math to confirm this answer. Because we are focusing on displaying the answer in the decimal-degree format, we need to convert our $\frac{1\;[\min-lat]}{1852\; [m]}$ to degrees.
@@ -65,9 +66,16 @@
         \part{To how many significant digits was your estimated position accurate?}
     \end{parts}
     \clearpage
-    \question{Find and discuss a documented instance of a failure of navigation in a trans-oceanic flight. Be specific as to what went wrong and how this affected mission.}
+    \question{Find and discuss a documented instance of a failure of navigation in a trans-oceanic flight. Be specific as to what went wrong and how this affected mission.}\\
+    \solution{
+        According to \url{https://www.history.com/}, The first nonstop flight across the Atlantic ocean was a harrowing journey that lasted for 16 hours, not just due to "rudimentary aircraft", but also its archaic navigation system. Originally the two pilots, Alcock and Brown, were set to takeoff in Newfoundland and land near London. However, "fog overwhelmed the pilots, making navigation—conducted by sextant—next to impossible". Because of this, the pilots landed in Clifden, West Ireland. Clifden is about 900 kilometers west of London.}
     \clearpage
     \question{Find and discuss a documented instance of a failure of guidance in a trans-oceanic flight. Be specific as to what went wrong and how this affected the mission.}
+
+    \solution{ This example could be up for debate, but the Malaysia Airlines Flight 17\\
+    (\url{https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_17}) was a guidance failure that resulted in the flight being shot down over Eastern Ukranian airspace by Russian Seperatists. The flight is a Boeing 777-200ER and took off from Amsterdam and was supposed to land in Kuala Lumpur. The original flight plan proposed the airplane to fly around the conflict area and at a higher flight level, such to avoid the conflict area better. Upon nearing the conflict area, the pilots asked to stay at their current altitude of 33,000 [ft] (330 FL) and move to 20 [nm] north of their original track - ATC approved. The guidance system failed and the last contact with the airplane was found at FL 330 but almost 3.5 miles north of its proposed track, into the conflict area, where it was shot down. Autopilot and controls systems are advanced enough on these airplanes for it not to be a control problem, regardless of weather or wind conditions. My guess is that guidance system, around being updated to stay at the same flight level, reprogrammed itself to find the shortest route to the Kuala Lumpur airport.
+
+    }
     \clearpage
     \question{Assume that you have 1000 noisy biased measurements of the acceleration (scalar) of a \textit{\textbf{stationary}} body over 100 seconds ($dt = 0.1$) as shown in the equation below.
         \[\tilde{\ddot{x}} = \ddot{x} + b + \eta \]
