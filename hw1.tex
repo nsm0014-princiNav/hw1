@@ -33,14 +33,28 @@
     \begin{parts}
         \part{How many significant digits after the decimal must be included for a latitude represented in decimal degree to describe a position that is accurate to 1 cm?}
 
-        \solution{According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.}
+        \solution{According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.
 
-        \part{How many significant digits are required after the decimal in the arc-seconds field is represented in degrees, arc-minutes, and arc-seconds to describe the same accuracy (1 cm)?}
+        We can do some unit conversion math to confirm this answer. Because we are focusing on displaying the answer in the decimal-degree format, we need to convert our $\frac{1\;[\min-lat]}{1852\; [m]}$ to degrees.
+        \begin{equation}
+            \begin{split}
+                \left(\frac{1\;[\min-lat]}{1852\; [m]}\right)\left(\frac{1\;[deg-lat]}{60\; [min-lat]}\right) & = \left(\frac{0.167\;[deg-lat]}{1852\; [m]}\right)\\
+            \end{split}
+        \end{equation}
+        Since we are trying to find precision to 1 [cm], we then need to convert our $1852$ meters to centimeters.
+        \begin{equation}
+            \begin{split}
+                \left(\frac{0.167\;[deg-lat]}{1852\; [m]}\right)\left(\frac{1\;[m]}{100\; [cm]}\right) & = \left(\frac{9.0173\times10^{-7}\;[deg-lat]}{1\; [cm]}\right)
+            \end{split}
+        \end{equation}
+        According to this conversion, at least 8 significant digits are needed for the latitude to be precise enough to 1 centimeter, although at 7 significant digits would be precise enough to about 1.11 centimeters.
+        }
+
+        \part{How many significant digits are required after the decimal in the arc-seconds field if represented in degrees, arc-minutes, and arc-seconds to describe the same accuracy (1 cm)?}
 
         \solution{
-        Becuase $1\times10^{-7}$ minutes of latitude are required for $1\;[cm]$ of distance and $1$ minute is $1$ arc-minute, we can say that at least 7 significant digits are required for $1\;[cm]$ of accuracy.
-
-        Because $1\times10^{-7}$ minutes of latitude are required for $1\;[cm]$ of distance and $60$ arc-seconds are in $1$ arc-minute, we can say that 6 significant digits of precision are needed when the longitude is given in arc-seconds.}
+            Because we know at least 8 significant digits are necessary for under 1 centimeter accuracy for the degree-decimal format and $1 \:\text{[deg]} = 60\: \text{[arc-minutes]}$, we can say that 7 significant digits of precision are necessary for an arc-minutes format. Furthermore, because 3600 arc-seconds occupy 1 degree of latitude, we can say the 5 significant digits of precision are necessary when in the arc-seconds format.
+        }
     \end{parts}
     Note: $1 \:\text{[deg]} = 60\: \text{[arc-minutes]}$ and $1\: \text{[arc-minute]} = 60\: \text{[arc-seconds]}$
     \clearpage
