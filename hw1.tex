@@ -104,6 +104,14 @@
         Numerically integrate the noisy biased measurements of acceleration to calculate velocity and position (assume zero initial conditions). Repeat this process 100 times such that you have 100 random velocity and position values from each time step. calculate the variance of the velocity and position at each time step and plot them versus time.
 
         Note: $N(0,1)$ indicates a normal distributed random variable with zero-mean and a variance of 1. The MATLAB command $>>randn$ generates normally distributed samples with a variance of 1.}
+
+    \solution{%
+        Becuase the noise is integrated at each instance of time, it grows with time as seen in figure 3.
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[width=\linewidth]{Q5.png}
+        \end{figure}
+    }
     \clearpage
     \question{Given the simulate acceleration measurements for problem 5, do the followiing:}
     \begin{parts}
