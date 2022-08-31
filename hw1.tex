@@ -29,11 +29,10 @@
 
 
 \begin{questions}
-    \question{Given that 1 minute of latitude is approximately equal to 1 nautical mile (1852 meters), determine the following:}
+    \question{Given that 1 minute of latitude is approximately equal to 1 nautical mile\\ (1852 meters), determine the following:}
     \begin{parts}
-        \part{How many significant digits after the decimal must be included for a
-            latitude represented in decimal degree to describe a position that is accurate
-            to 1 cm?}\\
+        \part{%
+            How many significant digits after the decimal must be included for a latitude represented in decimal degree to describe a position that is accurate to 1 cm?}\\
         \solution{According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.
 
         We can do some unit conversion math to confirm this answer. Because we are focusing on displaying the answer in the decimal-degree format, we need to convert our $\frac{1\;[\min-lat]}{1852\; [m]}$ to degrees.
@@ -143,11 +142,66 @@
     \question{You set out from town \textbf{A} and head east to town \textbf{B} $120$ kilometers away. Your vehicle has an odometer that is not particular accurate (it could be off by 1-2 kilometers after 50 kilometers of driving). You carry a decent watch, which is great at keeping time over short intervals, but it has been months since you last reset it. In other words, you can measure time intervals accurately, but do not know exactly what time it is. A short into your journey, the car breaks down.}
     \begin{parts}
         \part{According to your odometer, you have traveled 56 kilometers. Estimate your position.}
+
+        \solution{%
+            Becuase the odometer has a variance of $\pm 2$ [km], our position could be $54$ to $58$ [km] east of town \textbf{A}.
+        }
         \part{As you push your car to the shoulder of the road, a red bus zooms by, traveling from town \textbf{A} to town \textbf{B}. You glance at your watch and notice that it is exactly 21 minute past the hour. You know that the red buses are prompt, and they leave town \textbf{A} every hour on the hour traveling at exactly 3 kilometers per minute. Can you estimate your position without using the odometer information?}
+
+        \solution{%
+            Assuming that it is \textit{actually} 21 minutes past the hour, you could estimate your position to be $63$ [km] east of town \textbf{A}.
+        }
+
         \part{Estimate your position and clock bias based on all the information so far.
 
             (Hint: Write two equations that relate your position and clock bias to the available information. These equations are sometimes referred to as a navigation equations.)}
+
+        \solution{%
+            Using our estimated postion from our car's odometer and the speed of the bus along with our watch, we can write out kinematic equations to estimate our clock bias.
+            \begin{equation}
+                \begin{split}
+                    s & = s_{odom}\\
+                    s & = v_B(t_W + b_W)\\
+                    s_{odom} & = v_Bt_W + v_B b_W\\
+                    56 & = 3 \left[\frac{km}{min}\right] \cdot 21 \left[min \right] + 3 \left[\frac{km}{min}\right] b_W \left[min \right]\\
+                    b_W & = -2\frac{1}{3} \left[min\right]\\
+                    & = -2 \left[min\right] 20 \left[s\right]\\
+                \end{split}
+            \end{equation}
+            Based on the above work, the clock bias on the watch could at most be 3 minutes fast and at least 1 minute 40 seconds fast. Assuming the odometer to be accurate tells us that our watch is 2 minutes and 20 seconds fast.
+            \begin{equation}
+                \begin{split}
+                    s & = v_B(t_W + b_W)\\
+                    s & = 3 \left[\frac{km}{min}\right](21 \left[min \right] + -2\frac{1}{3} \left[min\right])\\
+                    s & = 56 \left[km\right] \pm 2 \left[km\right]\\
+                \end{split}
+            \end{equation}
+        }
         \part{At 25 minutes past the hour according to your watch. You observe a blue bus zoom past at 2.5 kilometers per minute, going from town \textbf{B} to town \textbf{A}. Blue buses leave town \textbf{B} every hour on the hour promptly and drive to town \textbf{A} at a constant speed. Estimate your position and clock bias based on all the information so far. (Hint: Recall that your watch can measure $dt$ accurately.)}
+
+        \solution{%
+            We can use all three measurements to estimate our clock bias and position in a similiar fashion to part (c).
+            \begin{equation}
+                \begin{split}
+                    s_1 & = v_{red}(t_{watch} + b_{watch_1})\\
+                    b_{watch} & = \frac{s_1 - v_{red}t_{watch_1}}{v_{red}}\\
+                \end{split}
+            \end{equation}
+            \begin{equation}
+                \begin{split}
+                    s_2 & = -v_{blue}(t_{watch} + b_{watch}) + 120\;[km]\\
+                    b_{watch} & = \frac{v_{blue}t_{watch_2} + s_2 - 120}{-v_{blue}}\\
+                \end{split}
+            \end{equation}
+            \begin{equation}
+                \begin{split}
+                    \frac{s_1 - v_{red}t_{watch_1}}{v_{red}} & = \frac{v_{blue}t_{watch_2} + s_2 - 120}{-v_{blue}}\\
+                    \frac{56 - 3\cdot 21}{3} & = \frac{2.5\cdot25 + s_2 - 120}{-2.5}\\
+                    s_2 = 63\frac{1}{3}[km]\\
+                \end{split}
+            \end{equation}
+        }
+
         \part{How would your solution be affected if your watch were exactly five minutes fast and all the clocks in town \textbf{A} and town \textbf{B} were running five minutes fast?}
         \part{Now suppose that your odometer never worked and the only vehicles you see are identical yellow cabs of carrier L1. These cabs leave town \textbf{A} every minute on the minute and travel exactly 1 kilometers per minute to town \textbf{B}. Can you estimate your position and clock error? Would it help if there were identical green cars of carrier L2 leaving town \textbf{B} every minute on the minute and traveling at 1 kilometers per minute to town \textbf{A}?
 
