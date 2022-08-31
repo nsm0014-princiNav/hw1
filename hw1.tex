@@ -93,7 +93,7 @@
     \question{Find and discuss a documented instance of a failure of guidance in a trans-oceanic flight. Be specific as to what went wrong and how this affected the mission.}
 
     \solution{ This example could be up for debate, but the Malaysia Airlines Flight 17\\
-    (\url{https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_17}) was a guidance failure that resulted in the flight being shot down over Eastern Ukranian airspace by Russian Seperatists. The flight is a Boeing 777-200ER and took off from Amsterdam and was supposed to land in Kuala Lumpur. The original flight plan proposed the airplane to fly around the conflict area and at a higher flight level, such to avoid the conflict area better. Upon nearing the conflict area, the pilots asked to stay at their current altitude of 33,000 [ft] (330 FL) and move to 20 [nm] north of their original track - ATC approved. The guidance system failed and the last contact with the airplane was found at FL 330 but almost 3.5 miles north of its proposed track, into the conflict area, where it was shot down. Autopilot and controls systems are advanced enough on these airplanes for it not to be a control problem, regardless of weather or wind conditions. My guess is that guidance system, around being updated to stay at the same flight level, reprogrammed itself to find the shortest route to the Kuala Lumpur airport.
+    (\url{https://en.wikipedia.org/wiki/Malaysia_Airlines_Flight_17}) was a guidance failure that resulted in the flight being shot down over Eastern Ukrainian airspace by Russian Separatists. The flight is a Boeing 777-200ER and took off from Amsterdam and was supposed to land in Kuala Lumpur. The original flight plan proposed the airplane to fly around the conflict area and at a higher flight level, such to avoid the conflict area better. Upon nearing the conflict area, the pilots asked to stay at their current altitude of 33,000 [ft] (330 FL) and move to 20 [nm] north of their original track - ATC approved. The guidance system failed and the last contact with the airplane was found at FL 330 but almost 3.5 miles north of its proposed track, into the conflict area, where it was shot down. Autopilot and controls systems are advanced enough on these airplanes for it not to be a control problem, regardless of weather or wind conditions. My guess is that guidance system, around being updated to stay at the same flight level, reprogrammed itself to find the shortest route to the Kuala Lumpur airport.
 
     }
     \clearpage
@@ -106,8 +106,9 @@
         Note: $N(0,1)$ indicates a normal distributed random variable with zero-mean and a variance of 1. The MATLAB command $>>randn$ generates normally distributed samples with a variance of 1.}
 
     \solution{%
-        Becuase the noise is integrated at each instance of time, it grows with time as seen in figure 3.
+        Because velocity and position have a dependency on the acceleration measurement, the noise gets inheiritly integrated at each time step, leading to a huge amount of variance at the end of the measurement period.
         \begin{figure}[!h]
+            \label{fig:3}
             \centering
             \includegraphics[width=\linewidth]{Q5.png}
         \end{figure}
@@ -117,9 +118,26 @@
     \begin{parts}
         \part{How would you estimate the bias?}
 
+        \solution{%
+            Because the body is known to be stationary, we can take the mean of the acceleration measurements. If the body was moving, computing a least squares solution could be another option.
+        }
+
         \part{Compute the 100 estimates of the bias using each set of 1000 measurements.}
 
+        \solution{%
+            From the figure below, we can see the monte-carlo simulation reveal a bias of around 3, which is the bias provided in the problem statement.
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[width=\linewidth]{Q6b.png}
+            \end{figure}
+
+        }
+
         \part{What is the mean and variances of the bias estimates?}
+
+        \solution{%
+            Taking the expectation of our monte-carlo bias estimate gives us an average bias estimate of $3.003$ which is more near our set bias value. The variance of the monte-carlo simuations was $9.53\times10^{-4}$. We could lower the variance closer to 0 if we run more simulations.
+        }
     \end{parts}
     \clearpage
     \question{You set out from town \textbf{A} and head east to town \textbf{B} $120$ kilometers away. Your vehicle has an odometer that is not particular accurate (it could be off by 1-2 kilometers after 50 kilometers of driving). You carry a decent watch, which is great at keeping time over short intervals, but it has been months since you last reset it. In other words, you can measure time intervals accurately, but do not know exactly what time it is. A short into your journey, the car breaks down.}
