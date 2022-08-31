@@ -181,25 +181,14 @@
 
         \solution{%
             We can use all three measurements to estimate our clock bias and position in a similiar fashion to part (c).
-            \begin{equation}
+            \begin{equation}\label{eq:5}
                 \begin{split}
-                    s_1 & = v_{red}(t_{watch} + b_{watch_1})\\
-                    b_{watch} & = \frac{s_1 - v_{red}t_{watch_1}}{v_{red}}\\
+                    s_{blue}    & = v_{blue}(t_{blue}) + 120\\
+                    & = -2.5 \left[\frac{km}{min}\right]\cdot25\;[min]+ 120\;[km]\\
+                    & = 57.5\; [km]\\
                 \end{split}
             \end{equation}
-            \begin{equation}
-                \begin{split}
-                    s_2 & = -v_{blue}(t_{watch} + b_{watch}) + 120\;[km]\\
-                    b_{watch} & = \frac{v_{blue}t_{watch_2} + s_2 - 120}{-v_{blue}}\\
-                \end{split}
-            \end{equation}
-            \begin{equation}
-                \begin{split}
-                    \frac{s_1 - v_{red}t_{watch_1}}{v_{red}} & = \frac{v_{blue}t_{watch_2} + s_2 - 120}{-v_{blue}}\\
-                    \frac{56 - 3\cdot 21}{3} & = \frac{2.5\cdot25 + s_2 - 120}{-2.5}\\
-                    s_2 = 63\frac{1}{3}[km]\\
-                \end{split}
-            \end{equation}
+            In equation~\ref*{eq:5} we add in $120\;$[km] to represent the distance between the towns and the velocity for the blue bus is negative to represent vehicles coming from town \textbf{B}.
         }
 
         \part{How would your solution be affected if your watch were exactly five minutes fast and all the clocks in town \textbf{A} and town \textbf{B} were running five minutes fast?}
