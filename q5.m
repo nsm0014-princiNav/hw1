@@ -8,16 +8,18 @@ t = linspace(0,100,1000);
 b = 3;
 sigma = 1;
 mean_q5 = 0;
-
+[gaussianDistVector] = gaussianDistFCN([100 1],sigma,mean_q5);
 a = zeros(100,length(t));
+a(:,1) = b + gaussianDistVector;
 v = zeros(100,length(t));
 p = zeros(100,length(t));
 
+
+dt = 0.1;
 for i = 1:100
-    dt = 0.1;
-    [gaussianDistVector] = gaussianDistFCN([1 1],sigma,mean_q5);
-    a(i,1) = b + gaussianDistVector;
+
     for k = 2:length(t)
+
         [gaussianDistVector] = gaussianDistFCN([1 1],sigma,mean_q5);
         a(i,k) = b + gaussianDistVector;
         v(i,k) = v(i,k-1) + a(i,k-1)*dt;
