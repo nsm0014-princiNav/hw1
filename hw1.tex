@@ -203,12 +203,31 @@
         \part{At 25 minutes past the hour according to your watch. You observe a blue bus zoom past at 2.5 kilometers per minute, going from town \textbf{B} to town \textbf{A}. Blue buses leave town \textbf{B} every hour on the hour promptly and drive to town \textbf{A} at a constant speed. Estimate your position and clock bias based on all the information so far. (Hint: Recall that your watch can measure $dt$ accurately.)}
 
         \solution{%
-            We can use all three measurements to estimate our clock bias and position in a similiar fashion to part (c).
+            We can use all three measurements to estimate our clock bias and position in a similiar fashion to part (c), but in matrix form.
             \begin{equation}\label{eq:5}
                 \begin{split}
-                    s_{blue}    & = v_{blue}(t_{blue}) + 120\\
-                    & = -2.5 \left[\frac{km}{min}\right]\cdot25\;[min]+ 120\;[km]\\
-                    & = 57.5\; [km]\\
+                    \begin{bmatrix}
+                        s \\
+                        b \\
+                    \end{bmatrix} & =
+                    \begin{bmatrix}
+                        1 & 0   \\
+                        1 & -3  \\
+                        1 & 2.5 \\
+                    \end{bmatrix}^{-1}
+                    \begin{bmatrix}
+                        64   \\
+                        57   \\
+                        62.5 \\
+                    \end{bmatrix}\\
+                    \begin{bmatrix}
+                        s \\
+                        b \\
+                    \end{bmatrix} & =
+                    \begin{bmatrix}
+                        61.3407 \\
+                        1.0440  \\
+                    \end{bmatrix}\\
                 \end{split}
             \end{equation}
             In equation~\ref*{eq:5} we add in $120\;$[km] to represent the distance between the towns and the velocity for the blue bus is negative to represent vehicles coming from town \textbf{B}.
