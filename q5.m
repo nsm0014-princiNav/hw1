@@ -38,21 +38,23 @@ var_mean_accel = var(mean_accel);
 fig1 = figure('Position',[500 500 800 400]);
 tiledlayout(2,1)
 nexttile
-xlabel('Time [s]','FontSize',16)
-ylabel('Variance','FontSize',16)
+title('Velocity')
+xlabel('Time [s]','FontSize',13)
+ylabel('Variance','FontSize',13)
 hold on
 plot(t,velo_var,LineWidth=2)
 
 nexttile
-xlabel('Time [s]','FontSize',16)
-ylabel('Variance','FontSize',16)
+xlabel('Time [s]','FontSize',13)
+ylabel('Variance','FontSize',13)
+title('Position')
 hold on
 plot(t,pos_var,LineWidth=2)
 saveas(fig1,'Q5.png')
 
 fig1 = figure('Position',[500 500 800 400]);
-xlabel('Simulations','FontSize',16)
-ylabel('Estimated Bias','FontSize',16)
+xlabel('Simulations','FontSize',13)
+ylabel('Estimated Bias','FontSize',13)
 hold on
 plot(1:100,mean_accel)
 saveas(fig1,'Q6b.png')
