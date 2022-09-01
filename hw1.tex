@@ -54,7 +54,7 @@
         \part{How many significant digits are required after the decimal in the arc-seconds field if represented in degrees, arc-minutes, and arc-seconds to describe the same accuracy (1 cm)?}
 
         \solution{
-            Because we know at least 8 significant digits are necessary for under 1 centimeter accuracy for the degree-decimal format and $1 \:\text{[deg]} = 60\: \text{[arc-minutes]}$, we can say that 7 significant digits of precision are necessary for an arc-minutes format. Furthermore, because 3600 arc-seconds occupy 1 degree of latitude, we can say the 5 significant digits of precision are necessary when in the arc-seconds format.
+            Because we know at least 8 significant digits are necessary for under 1 centimeter accuracy for the degree-decimal format and $1 \:\text{[deg]} = 60\: \text{[arc-minutes]}$, we can say that 9 significant digits of precision are necessary for an arc-minutes format. Furthermore, because 3600 arc-seconds occupy 1 degree of latitude, we can say the 10 significant digits of precision are necessary when in the arc-seconds format.
         }
     \end{parts}
     Note: $1 \:\text{[deg]} = 60\: \text{[arc-minutes]}$ and $1\: \text{[arc-minute]} = 60\: \text{[arc-seconds]}$
@@ -74,15 +74,17 @@
                 \caption{Estimated longitude and latitude at different lines of bearing}
                 \label{table:1}
                 \centering
-                \begin{tabular}{|c|c|c|c|c|c|}
+                \begin{tabular}{|c|c|c|c|c|}
                     \hline
-                              & \multicolumn{4}{|c|}{Number of Lines of Bearing} &                                      \\
+                                                   & \multicolumn{3}{|c|}{Number of Lines of Bearing} &                               \\
                     \hline
-                              & 1                                                & 2      & 3      & 4      & True      \\
+                                                   & 2                                                & 3       & 4       & True      \\
                     \hline
-                    Latitude  & 32.606                                           & 32.606 & 32.606 & 32.606 & 32.605556 \\
+                    Latitude                       & 32.604                                           & 32.6049 & 32.6051 & 32.605556 \\
                     \hline
-                    Longitude & 84.490                                           & 84.490 & 84.490 & 84.490 & 85.49     \\
+                    Longitude                      & 84.4897                                          & 84.489  & 84.4901 & 85.49     \\
+                    \hline
+                    Accuracy (sig figs) [Lat/Long] & 2/1                                              & 2/1     & 3/2     & N/A       \\
                     \hline
                 \end{tabular}
             \end{table}
@@ -97,10 +99,9 @@
                 \includegraphics[width=.3\linewidth]{IMG_7250 2022-08-30 03_13_03.PNG}
             \end{figure}
         }
-        \clearpage
         \part{To how many significant digits was your estimated position accurate?}
 
-        \solution{Comparing my estimated and true position reveals that my latitude was accurate to 5 significant digits and my longitude to 4 significant figures. I was surprised to see the accuracy of my estimated position. I believe this was due to the Google Earth app having very precise lines of latitude and longitude. This made it easy to make an estimate of my location by taking the average of the two lines of longitude out side of my predicted location.}
+        \solution{Comparing my estimated and true position reveals that my latitude was accurate to 3 significant digits and my longitude to 2 significant figures (see Table~\ref*{table:1}). I was surprised to see the accuracy of my estimated position. I believe this was due to the Google Earth app having very precise lines of latitude and longitude. This made it easy to make an estimate of my location by taking the average of the two lines of longitude out side of my predicted location.}
     \end{parts}
     \clearpage
     \question{Find and discuss a documented instance of a failure of navigation in a trans-oceanic flight. Be specific as to what went wrong and how this affected mission.}\\

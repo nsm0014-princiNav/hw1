@@ -22,8 +22,8 @@ for i = 1:100
 
         [gaussianDistVector] = gaussianDistFCN([1 1],sigma,mean_q5);
         a(i,k) = b + gaussianDistVector;
-        v(i,k) = v(i,k-1) + a(i,k-1)*dt;
-        p(i,k) = p(i,k-1) + v(i,k-1)*dt + 0.5*a(i,k-1)*dt*dt;
+        v(i,k) = v(i,k-1) + a(i,k)*dt;
+        p(i,k) = p(i,k-1) + v(i,k)*dt;
 
     end
 
