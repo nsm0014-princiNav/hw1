@@ -32,8 +32,9 @@
     \question{Given that 1 minute of latitude is approximately equal to 1 nautical mile\\ (1852 meters), determine the following:}
     \begin{parts}
         \part{%
-            How many significant digits after the decimal must be included for a latitude represented in decimal degree to describe a position that is accurate to 1 cm?}\\
-        \solution{According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.
+            How many significant digits after the decimal must be included for a latitude represented in decimal degree to describe a position that is accurate to 1 cm?}
+        \solution{%
+        According to \url{http://wiki.gis.com/wiki/index.php/Decimal_degrees},\\ 7 significant digits are required to have an accuracy of 1.11 centimeters.
 
         We can do some unit conversion math to confirm this answer. Because we are focusing on displaying the answer in the decimal-degree format, we need to convert our $\frac{1\;[\min-lat]}{1852\; [m]}$ to degrees.
         \begin{equation}
@@ -63,11 +64,28 @@
         \part{Determine your position using two, three, and four features.}
 
         \solution{
-            Standing on the top of the graduate buisness building, I was able to make out Davis Hall, Samford Hall, Jordan-Hare Stadium, and the basketball arena. From these lines of bearing I was able to determine my to position to be roughly $32.606^o$ N and $84.490^o$ W.
+            Standing on the top of the graduate buisness building, I was able to make out Davis Hall, Samford Hall, Jordan-Hare Stadium, and the basketball arena. From these four lines of bearing I was able to determine my to position to be roughly $32.606^o$ N and $84.490^o$ W. See table \ref{table:1} for the determination of position using a different number of lines of bearing.
             \begin{figure}[!h]
                 \centering
-                \includegraphics[width=.5\linewidth]{IMG_0025 2022-08-30 03_13_02.jpg}
+                \includegraphics[width=.4\linewidth]{IMG_0025 2022-08-30 03_13_02.jpg}
             \end{figure}
+
+            \begin{table}[h!]\label{tbl:1}
+                \caption{Estimated longitude and latitude at different lines of bearing}
+                \label{table:1}
+                \centering
+                \begin{tabular}{|c|c|c|c|c|c|}
+                    \hline
+                              & \multicolumn{4}{|c|}{Number of Lines of Bearing} &                                      \\
+                    \hline
+                              & 1                                                & 2      & 3      & 4      & True      \\
+                    \hline
+                    Latitude  & 32.606                                           & 32.606 & 32.606 & 32.606 & 32.605556 \\
+                    \hline
+                    Longitude & 84.490                                           & 84.490 & 84.490 & 84.490 & 85.49     \\
+                    \hline
+                \end{tabular}
+            \end{table}
         }
         \clearpage
         \part{Compare the accuracy of those solutions to your true location. You may use GPS, Google Maps, or other references to determine your "true" position.}
