@@ -225,8 +225,8 @@
                         b \\
                     \end{bmatrix} & =
                     \begin{bmatrix}
-                        61.3407 \\
-                        1.0440  \\
+                        61.3407~[km] \\
+                        1.0440~[min] \\
                     \end{bmatrix}\\
                 \end{split}
             \end{equation}
@@ -234,9 +234,18 @@
         }
 
         \part{How would your solution be affected if your watch were exactly five minutes fast and all the clocks in town \textbf{A} and town \textbf{B} were running five minutes fast?}
+
+        \solution{%
+            I don't think the solution would be affected at all. Because you know the exact clock biases for the entire system, you would simply add them in when collecting your measurements. If you did't have an idea about the clock biases of the buses, more measurements would be needed to calculate the effective clock bias of your watch.
+        }
         \part{Now suppose that your odometer never worked and the only vehicles you see are identical yellow cabs of carrier L1. These cabs leave town \textbf{A} every minute on the minute and travel exactly 1 kilometers per minute to town \textbf{B}. Can you estimate your position and clock error? Would it help if there were identical green cars of carrier L2 leaving town \textbf{B} every minute on the minute and traveling at 1 kilometers per minute to town \textbf{A}?
 
             Explain briefly.}
+
+        \solution{%
+            We can estimate our position and clock bias by simply counting the number of cars. Because the cars are traveling at an exact time and at an exact speed, with no noise, there should be no variation in the measurements. The addition of the green cars would help confirm your solution from the just the yellow vehicles, and the system would actually become
+            \textbf{overdetermined}.
+        }
     \end{parts}
 \end{questions}
 \end{document}
